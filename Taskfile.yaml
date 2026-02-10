@@ -1,0 +1,35 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: "First time setup:"
+    cmds:
+      - pip install -r requirements.txt
+      - ollama pull tinyllama
+    silent: false
+  
+  error:
+    desc: "creates errors"
+    cmds:
+      - bash ./scripts/generate_log.sh
+
+  # create dir
+  init:
+    desc: "creates dirs"
+    cmds:
+      - mkdir -p logs scripts models
+      - touch logs/test.log
+      - chmod +x scripts/*.sh || true
+
+  # runs scripts
+  
+  run:
+    desc: "run app"
+    cmds:
+      - python main.py
+
+  clean:
+    desc: "Clean up logs and temporary files"
+    cmds:
+      - rm -rf logs/*.log
+      - echo "Logs cleaned."

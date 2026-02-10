@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "python@3.11",
+    "ollama"
+  ],
+  "shell": {
+    "init_hook": [
+      "python -m venv .venv",
+      "source .venv/bin/activate",
+      "pip install --upgrade pip",
+      "pip install -r requirements.txt"
+    ]
+  }
+}
