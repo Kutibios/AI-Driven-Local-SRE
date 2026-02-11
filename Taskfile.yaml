@@ -3,6 +3,7 @@ version: '3'
 tasks:
   setup:
     desc: "First time setup:"
+    deps: [init]
     cmds:
       - pip install -r requirements.txt
       - ollama pull tinyllama
@@ -17,7 +18,7 @@ tasks:
   init:
     desc: "creates dirs"
     cmds:
-      - mkdir -p logs scripts models
+      - mkdir -p logs scripts models reports
       - touch logs/test.log
       - chmod +x scripts/*.sh || true
 
@@ -32,4 +33,5 @@ tasks:
     desc: "Clean up logs and temporary files"
     cmds:
       - rm -rf logs/*.log
+      - rm -rf reports/*.txt
       - echo "Logs cleaned."
