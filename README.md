@@ -24,6 +24,13 @@ Proje klasöründe bir terminal açın ve izole geliştirme ortamını (**Devbox
 ```bash
 devbox shell
 ```
+
+ ### A. Ollama Servisini Başlatın
+
+Uygulamanın yerel yapay zeka ile iletişim kurabilmesi için Ollama servisinin arka planda çalışıyor olması gerekmektedir. Yeni bir terminal sekmesi açın ve şu komutu çalıştırın:
+```bash
+ollama serve
+```
 ### 2\. Bağımlılıkları ve Modeli Hazırlama
 
 Gerekli Python kütüphanelerini kurmak ve AI modelini hazırlamak için şu komutu çalıştırın:
